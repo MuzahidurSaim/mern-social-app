@@ -1,6 +1,7 @@
 import React from 'react'
 import { Star } from 'lucide-react'
 import { assets } from '../assets/assets'
+import { SignIn } from '@clerk/clerk-react'
 
 const Login = () => {
     return (
@@ -35,6 +36,7 @@ const Login = () => {
             </div>
             {/* right side : Login Form */}
             <div className='flex-1 flex items-center justify-center p-6 sm:p-10'>
+                <SignIn />
             </div>
         </div>
     )
