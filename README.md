@@ -10,37 +10,42 @@
   <img src="https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss" />
   <img src="https://img.shields.io/badge/Auth-Clerk-orange" />
   <img src="https://img.shields.io/badge/License-MIT-green" />
-  <img src="https://vercelbadge.vercel.app/api/your-username/mern-social-app?style=flat-square" alt="Vercel Deployment Status" />
+  <img src="https://vercelbadge.vercel.app/api/MuzahidurSaim/mern-social-app?style=flat-square" alt="Vercel Deployment Status" />
 </p>
 
 ---
 
 ## 🚀 Overview
-**MERN Social App** is a social media client application designed to replicate core features of modern platforms. It provides a responsive feed, stories, messaging, connections, and profile management — all scaffolded with **Vite**, styled with **Tailwind CSS**, and integrated with **Clerk** for authentication.
+**MERN Social App** is a social networking client designed to replicate core features of modern platforms. It provides a responsive feed, stories, messaging, connections, and profile management — scaffolded with **Vite**, styled with **Tailwind CSS**, and integrated with **Clerk** for authentication.
 
 ---
 
-## ✨ Features Implemented So Far
-- **Project Scaffold**
-  - React client initialized with Vite.
-  - Tailwind CSS setup with Google Outfit font.
-  - Routing for core pages: Feed, Messages, Chat Box, Connections, Discover, Profile, Create Post.
-- **Authentication**
-  - Clerk Provider integration with publishable key.
-  - Sign In component on Login page.
-  - Conditional rendering based on `useUser()`.
-- **UI Components**
-  - Responsive Sidebar with Clerk user integration and sign-out.
-  - MenuItems component for navigation.
-  - Loading spinner for fallback states.
-- **Feed Page**
-  - Stories bar with story cards, modal for creating stories, and story viewer.
-  - PostCard component with user info, content, images, and actions.
-  - RecentMessages component with scrollable chat preview.
-  - Sponsored section in sidebar.
+## ✨ Features Implemented
+
+### v1.0.0
+- Initial frontend scaffold with feed, stories, messages, and authentication.
+- Sidebar, layout, loading, and menu components.
+- Clerk authentication integration.
+
+### v1.1.0
+- **Social Pages**
+  - Messages: connected users list with quick actions.
+  - Connections: tabbed interface for followers, following, connections, and pending requests.
+  - Discover: search and discovery of new users with loading state.
+  - PostCard: post rendering with user info, hashtags, images, and actions.
+  - UserCard: modular user display with follow and connection actions.
+
+- **User Pages**
+  - Profile: user info, posts, and connections.
+  - Post: post creation form with validation and preview.
+  - Chat: real-time messaging interface with navigation to profiles.
+  - Edit Profile: editable user details with Clerk integration.
+
 - **Bug Fixes**
-  - Corrected Tailwind typo (`lg:max-w-2xl`).
-  - Fixed asset import mismatches.
+  - Corrected props handling in UserCard.
+  - Imported missing icons from `lucide-react`.
+  - Fixed Tailwind typo in bio paragraph styling.
+  - Resolved layout inconsistencies across new pages.
 
 ---
 
@@ -55,18 +60,20 @@
 ---
 
 ## 📂 Project Structure
+
 ```
 src/
- ├── assets/          # Images, dummy data
- ├── components/      # Reusable UI components
- ├── pages/           # Page-level components (Feed, Messages, Profile, etc.)
- ├── App.jsx          # Routing setup
- └── main.jsx         # Entry point with Clerk provider
+├── assets/          # Images, dummy data
+├── components/      # Reusable UI components
+├── pages/           # Page-level components (Feed, Messages, Profile, etc.)
+├── App.jsx          # Routing setup
+└── main.jsx         # Entry point with Clerk provider
 ```
 
 ---
 
 ## ⚙️ Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/MuzahidurSaim/mern-social-app.git
@@ -111,14 +118,32 @@ npm run dev
   <i>Messages page showing connections and chat previews</i>
 </p>
 
+<p align="center">
+  <img src="./screenshots/profile.png" alt="Profile Page" width="600" />
+  <br/>
+  <i>Profile page with user info and posts</i>
+</p>
+
+<p align="center">
+  <img src="./screenshots/chat.png" alt="Chat Page" width="600" />
+  <br/>
+  <i>Chat page with real-time messaging interface</i>
+</p>
+
+<p align="center">
+  <img src="./screenshots/edit-profile.png" alt="Edit Profile Page" width="600" />
+  <br/>
+  <i>Edit Profile page with form for updating user details</i>
+</p>
+
 ---
 
 ## 📌 Roadmap
 - 🔒 Replace dummy data with API integration.  
-- 💬 Implement real-time messaging.  
+- 💬 Implement real-time messaging backend.  
 - ❤️ Add like/comment functionality in PostCard.  
 - 📸 Enhance Discover and Connections pages.  
-- 🚀 Deploy to Vercel.  
+- 🚀 Deploy to Vercel with CI/CD pipeline.  
 
 ---
 
@@ -130,5 +155,3 @@ Final-year CSE students at North South University, Bangladesh.
 
 ## 📜 License
 This project is licensed under the MIT License.
-
----
