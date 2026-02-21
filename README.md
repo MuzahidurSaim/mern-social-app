@@ -3,20 +3,22 @@
 </p>
 
 <h1 align="center">MERN Social App</h1>
-<p align="center"><i>A modern social media feed clone built with React, Vite, and Tailwind.</i></p>
+<p align="center"><i>A modern social media feed clone built with React, Vite, Tailwind, and Express backend.</i></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Vite-React-blue?logo=vite" />
   <img src="https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss" />
   <img src="https://img.shields.io/badge/Auth-Clerk-orange" />
-  <img src="https://img.shields.io/badge/License-MIT-green" />
+  <img src="https://img.shields.io/badge/Backend-Express-green?logo=express" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-47A248?logo=mongodb" />
+  <img src="https://img.shields.io/badge/Webhooks-Inngest-purple" />
   <img src="https://vercelbadge.vercel.app/api/MuzahidurSaim/mern-social-app?style=flat-square" alt="Vercel Deployment Status" />
 </p>
 
 ---
 
 ## 🚀 Overview
-**MERN Social App** is a social networking client designed to replicate core features of modern platforms. It provides a responsive feed, stories, messaging, connections, and profile management — scaffolded with **Vite**, styled with **Tailwind CSS**, and integrated with **Clerk** for authentication.
+**MERN Social App** is a social networking platform designed to replicate core features of modern platforms. It provides a responsive feed, stories, messaging, connections, and profile management — scaffolded with **Vite**, styled with **Tailwind CSS**, integrated with **Clerk** for authentication, and powered by an **Express + MongoDB backend** with **Inngest webhooks**.
 
 ---
 
@@ -29,23 +31,26 @@
 
 ### v1.1.0
 - **Social Pages**
-  - Messages: connected users list with quick actions.
-  - Connections: tabbed interface for followers, following, connections, and pending requests.
-  - Discover: search and discovery of new users with loading state.
-  - PostCard: post rendering with user info, hashtags, images, and actions.
-  - UserCard: modular user display with follow and connection actions.
-
+  - Messages, Connections, Discover, PostCard, UserCard.
 - **User Pages**
-  - Profile: user info, posts, and connections.
-  - Post: post creation form with validation and preview.
-  - Chat: real-time messaging interface with navigation to profiles.
-  - Edit Profile: editable user details with Clerk integration.
-
+  - Profile, Post, Chat, Edit Profile.
 - **Bug Fixes**
-  - Corrected props handling in UserCard.
-  - Imported missing icons from `lucide-react`.
-  - Fixed Tailwind typo in bio paragraph styling.
-  - Resolved layout inconsistencies across new pages.
+  - Props handling, icon imports, Tailwind typo, layout fixes.
+
+### v1.2.0
+- **Backend Setup**
+  - Express server with middleware and error handling.
+  - MongoDB Atlas connection with User schema.
+  - Clerk middleware for authentication.
+  - Multer config for file uploads.
+- **Inngest Webhook**
+  - Functions to sync Clerk user events (create, update, delete).
+  - Webhook endpoint integrated with Express.
+- **Deployment**
+  - Vercel configs for client and server.
+  - Environment variables for production deployment.
+- **Documentation**
+  - Updated README with backend setup and tech stack.
 
 ---
 
@@ -54,20 +59,24 @@
 - **Styling:** Tailwind CSS
 - **Icons:** Lucide-react
 - **Auth:** Clerk
-- **State Management:** React Hooks
-- **Routing:** React Router
+- **Backend:** Express.js
+- **Database:** MongoDB Atlas
+- **Webhooks:** Inngest
+- **Deployment:** Vercel
 
 ---
 
 ## 📂 Project Structure
 
 ```
-src/
-├── assets/          # Images, dummy data
-├── components/      # Reusable UI components
-├── pages/           # Page-level components (Feed, Messages, Profile, etc.)
-├── App.jsx          # Routing setup
-└── main.jsx         # Entry point with Clerk provider
+root/
+├── client/          # Frontend (React + Vite)
+├── server/          # Backend (Express + MongoDB)
+│   ├── configs/     # DB and Multer configs
+│   ├── models/      # Mongoose models
+│   ├── controllers/ # API controllers
+│   ├── inngest/     # Inngest functions
+│   └── server.js    # Entry point
 ```
 
 ---
@@ -81,10 +90,19 @@ git clone https://github.com/MuzahidurSaim/mern-social-app.git
 # Navigate into the project
 cd mern-social-app
 
-# Install dependencies
+# Install dependencies for client
+cd client
 npm install
 
-# Start development server
+# Install dependencies for server
+cd ../server
+npm install
+
+# Start backend server
+npm run server
+
+# Start frontend client
+cd ../client
 npm run dev
 ```
 
@@ -143,13 +161,13 @@ npm run dev
 - 💬 Implement real-time messaging backend.  
 - ❤️ Add like/comment functionality in PostCard.  
 - 📸 Enhance Discover and Connections pages.  
-- 🚀 Deploy to Vercel with CI/CD pipeline.  
+- 🚀 Expand backend APIs for posts, chat, and notifications.  
 
 ---
 
 ## 👤 Author
-Developed by **pending**  
-Final-year CSE students at North South University, Bangladesh.
+Developed by **Mern Social App Group**  
+Final-year CSE student at North South University, Bangladesh.
 
 ---
 
